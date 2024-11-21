@@ -9,6 +9,7 @@ import {
 	DiDocker,
 } from 'react-icons/di';
 import { SiRedis, SiPostgresql } from 'react-icons/si';
+console.log(<DiReact />);
 
 function Techstack() {
 	return (

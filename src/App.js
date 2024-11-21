@@ -16,17 +16,27 @@ import ScrollToTop from './components/ScrollToTop';
 import './style.css';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ReactGA from 'react-ga';
+import { useLocation } from 'react-router-dom';
+
+const TRACKING_ID = 'G-M70JDVN313';
+ReactGA.initialize(TRACKING_ID);
 
 function App() {
-	const [load, upadateLoad] = useState(true);
+	const [load, updateLoad] = useState(true);
+	const location = useLocation();
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
-			upadateLoad(false);
+			updateLoad(false);
 		}, 1200);
 
 		return () => clearTimeout(timer);
 	}, []);
+
+	useEffect(() => {
+		ReactGA.pageview(location.pathname + location.search);
+	}, [location]);
 
 	return (
 		<Router basename="/Portfolio">

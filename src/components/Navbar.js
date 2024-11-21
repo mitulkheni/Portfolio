@@ -8,6 +8,7 @@ import {
 	AiOutlineFundProjectionScreen,
 	AiOutlineUser,
 } from 'react-icons/ai';
+import logo from '../Assets/logo.png';
 
 import { CgFileDocument } from 'react-icons/cg';
 
@@ -44,7 +45,7 @@ function NavBar() {
 					<span></span>
 				</Navbar.Toggle>
 				<Navbar.Collapse id="responsive-navbar-nav">
-					<Nav className="ms-auto" defaultActiveKey="#home">
+					<Nav defaultActiveKey="#home">
 						<Nav.Item>
 							<Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
 								<AiOutlineHome style={{ marginBottom: '2px' }} /> Home
@@ -85,6 +86,9 @@ function NavBar() {
 						</Nav.Item>
 					</Nav>
 				</Navbar.Collapse>
+				<Navbar.Brand href="/" className="d-flex">
+					<img src={logo} className="img-fluid logo" alt="brand" />
+				</Navbar.Brand>
 			</Container>
 		</Navbar>
 	);
