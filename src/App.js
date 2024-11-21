@@ -24,7 +24,6 @@ ReactGA.initialize(TRACKING_ID);
 
 function App() {
 	const [load, updateLoad] = useState(true);
-	const location = useLocation();
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -34,26 +33,32 @@ function App() {
 		return () => clearTimeout(timer);
 	}, []);
 
-	useEffect(() => {
-		ReactGA.pageview(location.pathname + location.search);
-	}, [location]);
-
 	return (
 		<Router basename="/Portfolio">
 			<Preloader load={load} />
 			<div className="App" id={load ? 'no-scroll' : 'scroll'}>
 				<Navbar />
 				<ScrollToTop />
-				<Routes>
-					<Route path="/" element={<Home />} />
-					{/* <Route path="/project" element={<Projects />} /> */}
-					<Route path="/about" element={<About />} />
-					{/* <Route path="/resume" element={<Resume />} /> */}
-					<Route path="*" element={<Navigate to="/" />} />
-				</Routes>
+				<TrackedRoutes />
 				<Footer />
 			</div>
 		</Router>
+	);
+}
+
+function TrackedRoutes() {
+	const location = useLocation();
+
+	useEffect(() => {
+		ReactGA.pageview(location.pathname + location.search);
+	}, [location]);
+
+	return (
+		<Routes>
+			<Route path="/" element={<Home />} />
+			<Route path="/about" element={<About />} />
+			<Route path="*" element={<Navigate to="/" />} />
+		</Routes>
 	);
 }
 
