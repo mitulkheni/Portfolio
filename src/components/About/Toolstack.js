@@ -7,12 +7,15 @@ function Toolstack() {
 		<Row style={{ justifyContent: 'center', paddingBottom: '50px' }}>
 			<Col xs={4} md={2} className="tech-icons">
 				<SiUbuntu />
+				<span>Ubuntu</span>
 			</Col>
 			<Col xs={4} md={2} className="tech-icons">
 				<SiVisualstudiocode />
+				<span>Visual Studio</span>
 			</Col>
 			<Col xs={4} md={2} className="tech-icons">
 				<SiPostman />
+				<span>Postman</span>
 			</Col>
 		</Row>
 	);

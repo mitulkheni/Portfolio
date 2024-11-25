@@ -250,6 +250,14 @@ button:focus {
 	height: 100%;
 }
 
+.tech-icons span {
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+	font-size: 18px;
+	color: rgb(206, 95, 248);
+}
+
 .home-header {
 	padding-top: 80px !important;
 }

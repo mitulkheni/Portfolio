@@ -86,7 +86,7 @@ function NavBar() {
 						</Nav.Item>
 					</Nav>
 				</Navbar.Collapse>
-				<Navbar.Brand href="/" className="d-flex">
+				<Navbar.Brand href="/Portfolio/" className="d-flex">
 					<img src={logo} className="img-fluid logo" alt="brand" />
 				</Navbar.Brand>
 			</Container>
