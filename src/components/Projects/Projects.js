@@ -46,7 +46,7 @@ function Projects() {
 							imgPath={editor}
 							isBlog={false}
 							title="Helloo One"
-							description="Helloo one is an app to generate and share cards digitally.between clients and customers"
+							description="Helloo one is an app to generate and share cards digitally between clients and customers"
 							ghLink="https://github.com/soumyajit4419/Editor.io"
 							demoLink="https://app.helloo.one/"
 						/>
