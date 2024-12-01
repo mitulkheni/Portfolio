@@ -33,8 +33,11 @@ function App() {
 		return () => clearTimeout(timer);
 	}, []);
 
+	const isProduction = window.location.hostname !== 'localhost';
+	const basename = isProduction ? '/Portfolio' : '/';
+
 	return (
-		<Router basename="/Portfolio">
+		<Router basename={basename}>
 			<Preloader load={load} />
 			<div className="App" id={load ? 'no-scroll' : 'scroll'}>
 				<Navbar />
