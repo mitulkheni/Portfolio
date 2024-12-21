@@ -313,13 +313,13 @@ button:focus {
 	}
 }
 
-.myAvtar {
+.myAvatar {
 	justify-content: center !important;
 	padding-top: 9em !important;
 }
 
 @media (max-width: 767px) {
-	.myAvtar {
+	.myAvatar {
 		padding-top: 2em !important;
 		padding-bottom: 2em !important;
 	}
@@ -337,6 +337,13 @@ button:focus {
 	padding-bottom: 20px !important;
 	text-align: center;
 }
+
+/* .home-about-experience {
+	color: white !important;
+	padding-top: 200px !important;
+	padding-bottom: 20px !important;
+	text-align: center;
+} */
 
 .home-about-body {
 	padding-top: 50px;
@@ -479,6 +486,12 @@ button:focus {
 	transform: scale(1.02) !important;
 	overflow: hidden !important;
 	box-shadow: 0 4px 4px 5px rgba(129, 72, 144, 0.561) !important;
+}
+
+.project-card-view .card-body {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 }
 
 .blog-card {
