@@ -4,6 +4,7 @@ import homeLogo from '../../Assets/home-main.svg';
 import Particle from '../Particle';
 import Home2 from './Home2';
 import Type from './Type';
+import Reveal from '../Reveal';
 
 function Home() {
 	return (
@@ -32,6 +33,13 @@ function Home() {
 								I'M
 								<strong className="main-name"> MITUL KHENI</strong>
 							</h1>
+
+							<Reveal delay={0.2} y={10}>
+								<div className="open-to-work-badge">
+									<span className="open-to-work-dot" />
+									Open to new opportunities
+								</div>
+							</Reveal>
 
 							<div style={{ padding: 50, textAlign: 'left' }}>
 								<Type />

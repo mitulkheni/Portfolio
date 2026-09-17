@@ -10,16 +10,10 @@ function AboutCard() {
 					<p style={{ textAlign: 'justify' }}>
 						Hi Everyone, I am <span className="purple">Mitul Kheni </span>
 						from <span className="purple"> Surat, India.</span>
-						<br />I am currently employed as a web developer at{' '}
-						<a
-							href="https://weenggs.com"
-							style={{ textDecoration: 'none' }}
-							className="purple"
-							target="_blank"
-							rel="noreferrer"
-						>
-							CodeVerse Weenggs.
-						</a>
+						<br />I most recently worked as a{' '}
+						<span className="purple">Backend Developer / Architect</span> at
+						Matlab Infotech, where I led backend architecture for{' '}
+						<span className="purple">Strikezone's</span> CRM platform.
 						<br />
 						<br />
 						Apart from coding, some other activities that I love to do!

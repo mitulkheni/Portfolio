@@ -8,6 +8,7 @@ import {
 	AiFillInstagram,
 } from 'react-icons/ai';
 import { FaLinkedinIn } from 'react-icons/fa';
+import Reveal from '../Reveal';
 
 function Home2() {
 	return (
@@ -15,43 +16,48 @@ function Home2() {
 			<Container>
 				<Row>
 					<Col md={4} className="myAvatar">
-						<Tilt>
-							<img src={myImg} className="img-fluid" alt="avatar" />
-						</Tilt>
+						<Reveal y={16}>
+							<Tilt>
+								<img src={myImg} className="img-fluid" alt="avatar" />
+							</Tilt>
+						</Reveal>
 					</Col>
 					<Col md={8} className="home-about-description">
-						<h1 style={{ fontSize: '2.6em' }}>
-							LET ME <span className="purple"> INTRODUCE </span> MYSELF
-						</h1>
-						<p className="home-about-body">
-							I fell in love with programming and I have at least learnt
-							something, I think… 🤷‍♂️
-							<br />
-							<br />I am fluent in classics like
-							<i>
-								<b className="purple"> Javascript </b>
-							</i>
-							<br />
-							<br />
-							My field of Interest's are building new &nbsp;
-							<i>
-								<b className="purple">Web Technologies and Products </b>
-							</i>
-							<br />
-							<br />
-							Whenever possible, I also apply my passion for developing products
-							with <b className="purple">Node.js, Nest.js</b> and
-							<i>
-								<b className="purple">
-									{' '}
-									Modern Javascript Library and Frameworks
-								</b>
-							</i>
-							&nbsp; like
-							<i>
-								<b className="purple"> React.js</b>
-							</i>
-						</p>
+						<Reveal delay={0.1}>
+							<h1 style={{ fontSize: '2.6em' }}>
+								LET ME <span className="purple"> INTRODUCE </span> MYSELF
+							</h1>
+							<p className="home-about-body">
+								I design and build backend systems — from{' '}
+								<i>
+									<b className="purple">CRM platforms</b>
+								</i>{' '}
+								and provider-agnostic integrations to secure data-ingestion
+								APIs that other developers build on top of.
+								<br />
+								<br />
+								I work primarily in{' '}
+								<i>
+									<b className="purple">JavaScript and TypeScript</b>
+								</i>
+								, and I'm most at home architecting systems with
+								<i>
+									<b className="purple"> Node.js and Nest.js</b>
+								</i>
+								.
+								<br />
+								<br />I care about getting the underlying design right —
+								clean abstractions, sane data models, and APIs that are
+								pleasant for other developers to integrate with, backed by
+								<i>
+									<b className="purple">
+										{' '}
+										MongoDB, PostgreSQL, Redis and Docker
+									</b>
+								</i>
+								.
+							</p>
+						</Reveal>
 					</Col>
 				</Row>
 				<Row>

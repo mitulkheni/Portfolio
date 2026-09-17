@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import Projects from './components/Projects/Projects';
+import StrikezoneCaseStudy from './components/Projects/StrikezoneCaseStudy';
 import Footer from './components/Footer';
 import Resume from './components/Resume/ResumeNew';
 import {
@@ -61,6 +62,7 @@ function TrackedRoutes() {
 			<Route path="/" element={<Home />} />
 			<Route path="/about" element={<About />} />
 			<Route path="/project" element={<Projects />} />
+			<Route path="/project/strikezone" element={<StrikezoneCaseStudy />} />
 			<Route path="/resume" element={<Resume />} />
 			<Route path="*" element={<Navigate to="/" />} />
 		</Routes>

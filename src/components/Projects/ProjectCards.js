@@ -2,6 +2,8 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { CgWebsite } from 'react-icons/cg';
+import { AiOutlineFileText } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 function ProjectCards(props) {
 	return (
@@ -15,7 +17,15 @@ function ProjectCards(props) {
 				{'\n'}
 				{'\n'}
 
-				<div className="mt-auto">
+				<div
+					className="mt-auto d-flex"
+					style={{ gap: '10px', flexWrap: 'wrap' }}
+				>
+					{props.caseStudyLink && (
+						<Button variant="outline-light" as={Link} to={props.caseStudyLink}>
+							<AiOutlineFileText /> &nbsp; {'Case Study'}
+						</Button>
+					)}
 					{props.demoLink && (
 						<Button variant="primary" href={props.demoLink} target="_blank">
 							<CgWebsite /> &nbsp; {'Visit site'}
