@@ -5,6 +5,8 @@ import Home from './components/Home/Home';
 import About from './components/About/About';
 import Projects from './components/Projects/Projects';
 import StrikezoneCaseStudy from './components/Projects/StrikezoneCaseStudy';
+import MoveworkCaseStudy from './components/Projects/MoveworkCaseStudy';
+import WinchurchCaseStudy from './components/Projects/WinchurchCaseStudy';
 import Footer from './components/Footer';
 import Resume from './components/Resume/ResumeNew';
 import {
@@ -63,6 +65,8 @@ function TrackedRoutes() {
 			<Route path="/about" element={<About />} />
 			<Route path="/project" element={<Projects />} />
 			<Route path="/project/strikezone" element={<StrikezoneCaseStudy />} />
+			<Route path="/project/movework" element={<MoveworkCaseStudy />} />
+			<Route path="/project/winchurch" element={<WinchurchCaseStudy />} />
 			<Route path="/resume" element={<Resume />} />
 			<Route path="*" element={<Navigate to="/" />} />
 		</Routes>
