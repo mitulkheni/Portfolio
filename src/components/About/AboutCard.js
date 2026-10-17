@@ -9,11 +9,13 @@ function AboutCard() {
 				<blockquote className="blockquote mb-0">
 					<p style={{ textAlign: 'justify' }}>
 						Hi Everyone, I am <span className="purple">Mitul Kheni </span>
-						from <span className="purple"> Surat, India.</span>
+						from <span className="purple"> Surat, Gujarat, India.</span>
 						<br />I most recently worked as a{' '}
 						<span className="purple">Backend Developer / Architect</span> at
-						Matlab Infotech, where I led backend architecture for{' '}
-						<span className="purple">Strikezone's</span> CRM platform.
+						Matlab Infotech, where I developed the backend for{' '}
+						<span className="purple">AppInvento</span>, an AI platform that
+						builds and deploys full-stack apps from natural-language prompts,
+						and worked on the Movework and Winchurch Services platforms.
 						<br />
 						<br />
 						Apart from coding, some other activities that I love to do!

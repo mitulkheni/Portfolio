@@ -68,7 +68,7 @@ function MoveworkCaseStudy() {
 							parties.
 						</li>
 						<li>
-							<b className="purple">Inforu SMS</b> — SMS delivery for job
+							<b className="purple">InforuMobile SMS</b> — SMS delivery for job
 							updates, reaching contractors and posters who are on a job site,
 							not at a desk.
 						</li>
@@ -90,7 +90,7 @@ function MoveworkCaseStudy() {
 						<div className="arch-row">
 							<div className="arch-box">
 								Movework Clients
-								<span>Contractors · Job Posters</span>
+								<span>Android · iOS · Web — Contractors &amp; Job Posters</span>
 							</div>
 						</div>
 						<div className="arch-arrow-down">↓ REST API</div>
@@ -111,7 +111,7 @@ function MoveworkCaseStudy() {
 								<span>Payments</span>
 							</div>
 							<div className="arch-box">
-								Inforu
+								InforuMobile
 								<span>SMS</span>
 							</div>
 							<div className="arch-box">
@@ -145,7 +145,7 @@ function MoveworkCaseStudy() {
 							posters can pay with confidence.
 						</li>
 						<li>
-							Inforu SMS and Firebase push notification pipelines, so job
+							InforuMobile SMS and Firebase push notification pipelines, so job
 							updates reach people wherever they are.
 						</li>
 						<li>
@@ -165,7 +165,7 @@ function MoveworkCaseStudy() {
 						back, and Google SSO keeps onboarding low-friction — all of which
 						matter more for a marketplace than almost any single feature,
 						since a marketplace only works once enough people trust it to use
-						it.
+						it. The Android app now has 1,000+ downloads on Google Play.
 					</p>
 				</Reveal>
 

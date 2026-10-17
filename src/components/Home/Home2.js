@@ -28,12 +28,19 @@ function Home2() {
 								LET ME <span className="purple"> INTRODUCE </span> MYSELF
 							</h1>
 							<p className="home-about-body">
-								I design and build backend systems — from{' '}
+								I'm a backend developer with{' '}
 								<i>
-									<b className="purple">CRM platforms</b>
+									<b className="purple">4+ years</b>
 								</i>{' '}
-								and provider-agnostic integrations to secure data-ingestion
-								APIs that other developers build on top of.
+								of experience building services for{' '}
+								<i>
+									<b className="purple">
+										AI app-building, construction, marketplace, and tax
+										platforms
+									</b>
+								</i>{' '}
+								— leading backend architecture and delivering REST APIs,
+								microservices, data integrations, and production features.
 								<br />
 								<br />
 								I work primarily in{' '}
@@ -52,7 +59,7 @@ function Home2() {
 								<i>
 									<b className="purple">
 										{' '}
-										MongoDB, PostgreSQL, Redis and Docker
+										MongoDB, PostgreSQL, Redis, Docker and AWS
 									</b>
 								</i>
 								.

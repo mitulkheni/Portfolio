@@ -94,7 +94,7 @@ function WinchurchCaseStudy() {
 						<div className="arch-arrow-down">↓ HMRC records</div>
 						<div className="arch-row">
 							<div className="arch-box">
-								Database
+								PostgreSQL
 								<span>Normalized taxpayer &amp; tax records</span>
 							</div>
 						</div>
@@ -117,7 +117,7 @@ function WinchurchCaseStudy() {
 						</li>
 						<li>
 							The pipeline that stores and normalizes collected records into
-							the database.
+							PostgreSQL.
 						</li>
 						<li>
 							The tax reconciliation logic, comparing each record against
