@@ -1,7 +1,6 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import {
-	SiVisualstudiocode,
 	SiPostman,
 	SiSwagger,
 	SiUbuntu,
@@ -9,6 +8,8 @@ import {
 	SiJest,
 	SiVercel,
 } from 'react-icons/si';
+// react-icons 5 removed the Visual Studio Code logo from the Simple Icons set.
+import { VscVscode } from 'react-icons/vsc';
 
 function Toolstack() {
 	return (
@@ -18,7 +19,7 @@ function Toolstack() {
 				<span>Ubuntu</span>
 			</Col>
 			<Col xs={4} md={2} className="tech-icons">
-				<SiVisualstudiocode />
+				<VscVscode />
 				<span>Visual Studio</span>
 			</Col>
 			<Col xs={4} md={2} className="tech-icons">

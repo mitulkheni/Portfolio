@@ -18,12 +18,13 @@ import {
 	SiSupabase,
 	SiFirebase,
 	SiPrisma,
-	SiAmazonaws,
-	SiMicrosoftazure,
 	SiApachekafka,
 	SiRabbitmq,
 	SiJsonwebtokens,
 } from 'react-icons/si';
+// react-icons 5 removed the AWS and Azure logos from the Simple Icons set.
+import { FaAws } from 'react-icons/fa';
+import { VscAzure } from 'react-icons/vsc';
 
 function Techstack() {
 	return (
@@ -81,11 +82,11 @@ function Techstack() {
 				<span>Prisma</span>
 			</Col>
 			<Col xs={4} md={2} className="tech-icons">
-				<SiAmazonaws />
+				<FaAws />
 				<span>AWS</span>
 			</Col>
 			<Col xs={4} md={2} className="tech-icons">
-				<SiMicrosoftazure />
+				<VscAzure />
 				<span>Azure</span>
 			</Col>
 			<Col xs={4} md={2} className="tech-icons">

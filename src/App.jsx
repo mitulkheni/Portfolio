@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import Preloader from '../src/components/Pre';
 import Navbar from './components/Navbar';
 import Home from './components/Home/Home';
@@ -10,7 +10,6 @@ import AppInventoCaseStudy from './components/Projects/AppInventoCaseStudy';
 import MoveworkCaseStudy from './components/Projects/MoveworkCaseStudy';
 import WinchurchCaseStudy from './components/Projects/WinchurchCaseStudy';
 import Footer from './components/Footer';
-import Resume from './components/Resume/ResumeNew';
 import Contact from './components/Contact/Contact';
 import {
 	BrowserRouter as Router,
@@ -22,11 +21,10 @@ import ScrollToTop from './components/ScrollToTop';
 import './style.css';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ReactGA from 'react-ga';
 import { useLocation } from 'react-router-dom';
 
-const TRACKING_ID = 'G-M70JDVN313';
-ReactGA.initialize(TRACKING_ID);
+// pdf.js is large and only the Resume page needs it, so load it on demand.
+const Resume = lazy(() => import('./components/Resume/ResumeNew'));
 
 function App() {
 	const [load, updateLoad] = useState(true);
@@ -39,11 +37,8 @@ function App() {
 		return () => clearTimeout(timer);
 	}, []);
 
-	const isProduction = window.location.hostname !== 'localhost';
-	const basename = isProduction ? '/Portfolio' : '/';
-
 	return (
-		<Router basename={basename}>
+		<Router basename={import.meta.env.BASE_URL}>
 			<Preloader load={load} />
 			<div className="App" id={load ? 'no-scroll' : 'scroll'}>
 				<a href="#main-content" className="skip-link">
@@ -52,7 +47,7 @@ function App() {
 				<Navbar />
 				<ScrollToTop />
 				<main id="main-content">
-					<TrackedRoutes />
+					<AppRoutes />
 				</main>
 				<Footer />
 			</div>
@@ -72,27 +67,28 @@ const PAGE_TITLES = {
 	'/contact': `Contact | ${SITE_TITLE}`,
 };
 
-function TrackedRoutes() {
+function AppRoutes() {
 	const location = useLocation();
 
 	useEffect(() => {
 		document.title = PAGE_TITLES[location.pathname] || PAGE_TITLES['/'];
-		ReactGA.pageview(location.pathname + location.search);
 	}, [location]);
 
 	return (
-		<Routes>
-			<Route path="/" element={<Home />} />
-			<Route path="/about" element={<About />} />
-			<Route path="/project" element={<Projects />} />
-			{/* <Route path="/project/strikezone" element={<StrikezoneCaseStudy />} /> */}
-			<Route path="/project/appinvento" element={<AppInventoCaseStudy />} />
-			<Route path="/project/movework" element={<MoveworkCaseStudy />} />
-			<Route path="/project/winchurch" element={<WinchurchCaseStudy />} />
-			<Route path="/resume" element={<Resume />} />
-			<Route path="/contact" element={<Contact />} />
-			<Route path="*" element={<Navigate to="/" />} />
-		</Routes>
+		<Suspense fallback={null}>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/about" element={<About />} />
+				<Route path="/project" element={<Projects />} />
+				{/* <Route path="/project/strikezone" element={<StrikezoneCaseStudy />} /> */}
+				<Route path="/project/appinvento" element={<AppInventoCaseStudy />} />
+				<Route path="/project/movework" element={<MoveworkCaseStudy />} />
+				<Route path="/project/winchurch" element={<WinchurchCaseStudy />} />
+				<Route path="/resume" element={<Resume />} />
+				<Route path="/contact" element={<Contact />} />
+				<Route path="*" element={<Navigate to="/" />} />
+			</Routes>
+		</Suspense>
 	);
 }
 
