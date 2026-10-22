@@ -15,7 +15,10 @@ function AboutCard() {
 						Matlab Infotech, where I developed the backend for{' '}
 						<span className="purple">AppInvento</span>, an AI platform that
 						builds and deploys full-stack apps from natural-language prompts,
-						and worked on the Movework and Winchurch Services platforms.
+						and worked on the Movework and Winchurch Services platforms. I'm
+						now freelancing, taking on{' '}
+						<span className="purple">backend and API projects</span> for
+						clients.
 						<br />
 						<br />
 						Apart from coding, some other activities that I love to do!

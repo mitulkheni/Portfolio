@@ -2,19 +2,34 @@ import React, { useState, useEffect } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
 	AiOutlineHome,
 	AiOutlineFundProjectionScreen,
 	AiOutlineUser,
+	AiOutlineMail,
 } from 'react-icons/ai';
 import logo from '../Assets/logo.png';
 
 import { CgFileDocument } from 'react-icons/cg';
 
+const NAV_LINKS = [
+	{ to: '/', label: 'Home', Icon: AiOutlineHome },
+	{ to: '/about', label: 'About', Icon: AiOutlineUser },
+	{ to: '/project', label: 'Projects', Icon: AiOutlineFundProjectionScreen },
+	{ to: '/resume', label: 'Resume', Icon: CgFileDocument },
+	{ to: '/contact', label: 'Contact', Icon: AiOutlineMail },
+];
+
+// Projects stays highlighted on its case-study pages (/project/<slug>).
+function isActive(pathname, to) {
+	return to === '/' ? pathname === '/' : pathname.startsWith(to);
+}
+
 function NavBar() {
 	const [expand, updateExpanded] = useState(false);
 	const [navColour, updateNavbar] = useState(false);
+	const { pathname } = useLocation();
 
 	useEffect(() => {
 		function scrollHandler() {
@@ -48,49 +63,32 @@ function NavBar() {
 					<span></span>
 				</Navbar.Toggle>
 				<Navbar.Collapse id="responsive-navbar-nav">
-					<Nav defaultActiveKey="#home">
-						<Nav.Item>
-							<Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-								<AiOutlineHome style={{ marginBottom: '2px' }} /> Home
-							</Nav.Link>
-						</Nav.Item>
-
-						<Nav.Item>
-							<Nav.Link
-								as={Link}
-								to="/about"
-								onClick={() => updateExpanded(false)}
-							>
-								<AiOutlineUser style={{ marginBottom: '2px' }} /> About
-							</Nav.Link>
-						</Nav.Item>
-
-						<Nav.Item>
-							<Nav.Link
-								as={Link}
-								to="/project"
-								onClick={() => updateExpanded(false)}
-							>
-								<AiOutlineFundProjectionScreen
-									style={{ marginBottom: '2px' }}
-								/>{' '}
-								Projects
-							</Nav.Link>
-						</Nav.Item>
-
-						<Nav.Item>
-							<Nav.Link
-								as={Link}
-								to="/resume"
-								onClick={() => updateExpanded(false)}
-							>
-								<CgFileDocument style={{ marginBottom: '2px' }} /> Resume
-							</Nav.Link>
-						</Nav.Item>
+					<Nav>
+						{NAV_LINKS.map(({ to, label, Icon }) => {
+							const active = isActive(pathname, to);
+							return (
+								<Nav.Item key={to}>
+									<Nav.Link
+										as={Link}
+										to={to}
+										active={active}
+										aria-current={active ? 'page' : undefined}
+										onClick={() => updateExpanded(false)}
+									>
+										<Icon style={{ marginBottom: '2px' }} aria-hidden="true" />{' '}
+										{label}
+									</Nav.Link>
+								</Nav.Item>
+							);
+						})}
 					</Nav>
 				</Navbar.Collapse>
 				<Navbar.Brand as={Link} to="/" className="d-flex">
-					<img src={logo} className="img-fluid logo" alt="brand" />
+					<img
+						src={logo}
+						className="img-fluid logo"
+						alt="Mitul Kheni, home"
+					/>
 				</Navbar.Brand>
 			</Container>
 		</Navbar>

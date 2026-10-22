@@ -11,6 +11,7 @@ import MoveworkCaseStudy from './components/Projects/MoveworkCaseStudy';
 import WinchurchCaseStudy from './components/Projects/WinchurchCaseStudy';
 import Footer from './components/Footer';
 import Resume from './components/Resume/ResumeNew';
+import Contact from './components/Contact/Contact';
 import {
 	BrowserRouter as Router,
 	Route,
@@ -45,19 +46,37 @@ function App() {
 		<Router basename={basename}>
 			<Preloader load={load} />
 			<div className="App" id={load ? 'no-scroll' : 'scroll'}>
+				<a href="#main-content" className="skip-link">
+					Skip to content
+				</a>
 				<Navbar />
 				<ScrollToTop />
-				<TrackedRoutes />
+				<main id="main-content">
+					<TrackedRoutes />
+				</main>
 				<Footer />
 			</div>
 		</Router>
 	);
 }
 
+const SITE_TITLE = 'Mitul Kheni';
+const PAGE_TITLES = {
+	'/': `${SITE_TITLE} | Freelance Backend Developer (Node.js, NestJS)`,
+	'/about': `About | ${SITE_TITLE}`,
+	'/project': `Projects | ${SITE_TITLE}`,
+	'/project/appinvento': `AppInvento Case Study | ${SITE_TITLE}`,
+	'/project/movework': `Movework Case Study | ${SITE_TITLE}`,
+	'/project/winchurch': `Winchurch Services Case Study | ${SITE_TITLE}`,
+	'/resume': `Resume | ${SITE_TITLE}`,
+	'/contact': `Contact | ${SITE_TITLE}`,
+};
+
 function TrackedRoutes() {
 	const location = useLocation();
 
 	useEffect(() => {
+		document.title = PAGE_TITLES[location.pathname] || PAGE_TITLES['/'];
 		ReactGA.pageview(location.pathname + location.search);
 	}, [location]);
 
@@ -71,6 +90,7 @@ function TrackedRoutes() {
 			<Route path="/project/movework" element={<MoveworkCaseStudy />} />
 			<Route path="/project/winchurch" element={<WinchurchCaseStudy />} />
 			<Route path="/resume" element={<Resume />} />
+			<Route path="/contact" element={<Contact />} />
 			<Route path="*" element={<Navigate to="/" />} />
 		</Routes>
 	);

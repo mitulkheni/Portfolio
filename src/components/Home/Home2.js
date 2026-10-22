@@ -2,12 +2,9 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import myImg from '../../Assets/avatar.svg';
 import Tilt from 'react-parallax-tilt';
-import {
-	AiFillGithub,
-	AiOutlineTwitter,
-	AiFillInstagram,
-} from 'react-icons/ai';
+import { AiFillGithub, AiFillInstagram } from 'react-icons/ai';
 import { FaLinkedinIn } from 'react-icons/fa';
+import XIcon from '../XIcon';
 import Reveal from '../Reveal';
 
 function Home2() {
@@ -18,7 +15,7 @@ function Home2() {
 					<Col md={4} className="myAvatar">
 						<Reveal y={16}>
 							<Tilt>
-								<img src={myImg} className="img-fluid" alt="avatar" />
+								<img src={myImg} className="img-fluid" alt="" />
 							</Tilt>
 						</Reveal>
 					</Col>
@@ -77,6 +74,7 @@ function Home2() {
 							<li className="social-icons">
 								<a
 									href="https://github.com/mitulkheni"
+									aria-label="GitHub"
 									target="_blank"
 									rel="noreferrer"
 									className="icon-colour  home-social-icons"
@@ -87,16 +85,18 @@ function Home2() {
 							<li className="social-icons">
 								<a
 									href="https://x.com/Mitulkheni5"
+									aria-label="X (Twitter)"
 									target="_blank"
 									rel="noreferrer"
 									className="icon-colour  home-social-icons"
 								>
-									<AiOutlineTwitter />
+									<XIcon />
 								</a>
 							</li>
 							<li className="social-icons">
 								<a
 									href="https://www.linkedin.com/in/mitul-kheni/"
+									aria-label="LinkedIn"
 									target="_blank"
 									rel="noreferrer"
 									className="icon-colour  home-social-icons"
@@ -107,6 +107,7 @@ function Home2() {
 							<li className="social-icons">
 								<a
 									href="https://www.instagram.com/mitul__kheni/"
+									aria-label="Instagram"
 									target="_blank"
 									rel="noreferrer"
 									className="icon-colour home-social-icons"

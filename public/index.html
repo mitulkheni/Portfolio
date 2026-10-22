@@ -18,48 +18,122 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%PUBLIC_URL%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="theme-color" content="#000000" />
+		<meta name="theme-color" content="#0c0513" />
 		<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-		<title>Mitul Kheni | Portfolio</title>
+		<link rel="canonical" href="https://mitulkheni.github.io/Portfolio/" />
+		<title>Mitul Kheni | Freelance Backend Developer (Node.js, NestJS)</title>
 		<meta
 			name="description"
-			content="Self Developed personal website build with React.js"
+			content="Freelance backend developer in Surat, India. 4+ years building Node.js and NestJS APIs, microservices and integrations for AI, marketplace and tax platforms."
 		/>
+		<meta name="author" content="Mitul Kheni" />
 
 		<!-- Google / Search Engine Tags -->
-		<meta itemprop="name" content="Mitul Kheni | Portfolio" />
+		<meta
+			itemprop="name"
+			content="Mitul Kheni | Freelance Backend Developer (Node.js, NestJS)"
+		/>
 		<meta
 			itemprop="description"
-			content="Self Developed personal website build with React.js"
+			content="Freelance backend developer in Surat, India. 4+ years building Node.js and NestJS APIs, microservices and integrations for AI, marketplace and tax platforms."
 		/>
 		<meta
 			itemprop="image"
-			content="https://raw.githubusercontent.com/mitulkheni/Portfolio/main/src/Assets/image.png"
+			content="https://mitulkheni.github.io/Portfolio/og-image.jpg"
 		/>
 
-		<!-- Facebook Meta Tags -->
+		<!-- Open Graph (Facebook, LinkedIn, WhatsApp) Tags -->
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Mitul Kheni | Portfolio" />
+		<meta property="og:site_name" content="Mitul Kheni" />
+		<meta property="og:url" content="https://mitulkheni.github.io/Portfolio/" />
+		<meta
+			property="og:title"
+			content="Mitul Kheni | Freelance Backend Developer (Node.js, NestJS)"
+		/>
 		<meta
 			property="og:description"
-			content="Self Developed personal website build with React.js"
+			content="Freelance backend developer in Surat, India. 4+ years building Node.js and NestJS APIs, microservices and integrations for AI, marketplace and tax platforms."
 		/>
 		<meta
 			property="og:image"
-			content="https://raw.githubusercontent.com/mitulkheni/Portfolio/main/src/Assets/image.png"
+			content="https://mitulkheni.github.io/Portfolio/og-image.jpg"
+		/>
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta
+			property="og:image:alt"
+			content="Mitul Kheni's portfolio: freelance backend developer"
 		/>
 
 		<!-- Twitter Meta Tags -->
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Mitul Kheni | Portfolio" />
+		<meta
+			name="twitter:title"
+			content="Mitul Kheni | Freelance Backend Developer (Node.js, NestJS)"
+		/>
 		<meta
 			name="twitter:description"
-			content="Self Developed personal website build with React.js"
+			content="Freelance backend developer in Surat, India. 4+ years building Node.js and NestJS APIs, microservices and integrations for AI, marketplace and tax platforms."
 		/>
 		<meta
 			name="twitter:image"
-			content="https://raw.githubusercontent.com/mitulkheni/Portfolio/main/src/Assets/image.png"
+			content="https://mitulkheni.github.io/Portfolio/og-image.jpg"
 		/>
+		<meta
+			name="twitter:image:alt"
+			content="Mitul Kheni's portfolio: freelance backend developer"
+		/>
+
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Mitul Kheni",
+				"jobTitle": "Freelance Backend Developer",
+				"url": "https://mitulkheni.github.io/Portfolio/",
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Surat",
+					"addressRegion": "Gujarat",
+					"addressCountry": "IN"
+				},
+				"knowsAbout": [
+					"Node.js",
+					"NestJS",
+					"TypeScript",
+					"PostgreSQL",
+					"MongoDB",
+					"AWS",
+					"REST APIs"
+				],
+				"sameAs": [
+					"https://github.com/mitulkheni",
+					"https://www.linkedin.com/in/mitul-kheni/",
+					"https://x.com/Mitulkheni5"
+				]
+			}
+		</script>
+
+		<!-- GitHub Pages SPA support: restores the real path after the 404.html redirect.
+		     https://github.com/rafgraph/spa-github-pages -->
+		<script>
+			(function (l) {
+				if (l.search[1] === '/') {
+					var decoded = l.search
+						.slice(1)
+						.split('&')
+						.map(function (s) {
+							return s.replace(/~and~/g, '&');
+						})
+						.join('?');
+					window.history.replaceState(
+						null,
+						null,
+						l.pathname.slice(0, -1) + decoded + l.hash,
+					);
+				}
+			})(window.location);
+		</script>
 	</head>
 
 	<body>
